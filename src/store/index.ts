@@ -1,5 +1,5 @@
 import { createStore } from 'solid-js/store'
-import { puzzleToBoard } from '~/util/fns'
+import { puzzleToBoard } from '../util/fns'
 import { State } from './types'
 import dispatch from './dispatch'
 
@@ -24,6 +24,3 @@ const init: State = {
 const [state, setState] = createStore(init)
 
 export { dispatch, state, setState }
-
-//import { state, dispatch } from '~/store'
-//import { autoSolve } from '~/store/actions'

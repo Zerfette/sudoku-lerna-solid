@@ -1,5 +1,5 @@
 import { Eq as bEq } from 'fp-ts/boolean'
-import { lensEq, mapWhen } from '~/util/fns'
+import { lensEq, mapWhen } from '../../util/fns'
 import { valueLens, selectedLens } from '../optics'
 import { Board, Mutation } from '../types'
 

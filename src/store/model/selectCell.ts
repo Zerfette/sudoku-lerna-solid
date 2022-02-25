@@ -1,7 +1,7 @@
 import { map, modifyAt } from 'fp-ts/Array'
 import { constant, identity, flow, pipe } from 'fp-ts/function'
 import { fold as optFold } from 'fp-ts/Option'
-import { when } from '~/util/fns'
+import { when } from '../../util/fns'
 import { selectedLens, highlightedLens } from '../optics'
 import { Board, Mutation } from '../types'
 

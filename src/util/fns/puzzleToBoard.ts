@@ -3,9 +3,9 @@ import { flow, pipe } from 'fp-ts/function'
 import { concatAll } from 'fp-ts/Monoid'
 import { Eq as nEq, MonoidProduct, MonoidSum } from 'fp-ts/number'
 import { bimap } from 'fp-ts/Tuple'
-import { indLens } from '~core/board/optics'
-import { Board, Cell, Puzzle } from '~core/types'
-import { concat } from '~util/fns'
+import { indLens } from '../../store/optics'
+import { Board, Cell, Puzzle } from '../../store/types'
+import { concat } from '../fns'
 
 type Op = (x: number) => number
 const op: Op = x => pipe(x, concat(MonoidProduct)(1 / 3), Math.floor) // Math.floor(x / 3)

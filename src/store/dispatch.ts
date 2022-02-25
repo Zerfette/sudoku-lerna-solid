@@ -1,4 +1,4 @@
-import { puzzleToBoard } from '~/util/fns'
+import { puzzleToBoard } from '../util/fns'
 import { setState } from './'
 import { Action, ActionType } from './actions/types'
 import {
@@ -23,7 +23,7 @@ const dispatch = (action: Action): void => {
       setState('board', board => autoSolve(<Board>board, action.payload))
       break
     case ActionType.SET_PUZZLE:
-      setState('board', board => puzzleToBoard(<Board>board))
+      setState('board', puzzleToBoard(action.payload.puzzle))
       break
     case ActionType.CLEAR_SELECTION:
       setState('numberSelected', 0)
@@ -59,7 +59,9 @@ const dispatch = (action: Action): void => {
       setState('toggles', toggles => toggle(<Toggles>toggles, action.payload))
       break
     case ActionType.SET_TOGGLE:
-      setState('toggles', toggles => setToggle(<Toggles>toggles, action.payload))
+      setState('toggles', toggles =>
+        setToggle(<Toggles>toggles, action.payload)
+      )
       break
     default:
       break

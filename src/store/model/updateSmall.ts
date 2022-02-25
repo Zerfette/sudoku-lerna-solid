@@ -3,7 +3,7 @@ import { Eq as bEq, fold as bFold } from 'fp-ts/boolean'
 import { constant, pipe } from 'fp-ts/function'
 import { Eq as nEq, Ord as nOrd } from 'fp-ts/number'
 import { Lens } from 'monocle-ts'
-import { ifElse, lensEq, mapWhen } from '~/util/fns'
+import { ifElse, lensEq, mapWhen } from '../../util/fns'
 import { selectedLens } from '../optics'
 import { Board, Cell, Mutation, Smalls } from '../types'
 

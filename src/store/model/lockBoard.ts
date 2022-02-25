@@ -1,7 +1,7 @@
 import { map } from 'fp-ts/Array'
 import { flow, Endomorphism, not } from 'fp-ts/function'
 import { Eq as nEq } from 'fp-ts/number'
-import { when, lensEq } from '~/util/fns'
+import { when, lensEq } from '../../util/fns'
 import {
   valueLens,
   selectedLens,
