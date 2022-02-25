@@ -1,5 +1,5 @@
 import { map, size } from 'fp-ts/Array'
-import { MonoidAll, MonoidAny } from 'fp-ts/Boolean'
+import { MonoidAll, MonoidAny } from 'fp-ts/boolean'
 import { Eq } from 'fp-ts/Eq'
 import {
   constFalse,
