@@ -1,6 +1,7 @@
 import { elem, filter, map } from 'fp-ts/Array'
-import { flow, not, pipe, Predicate } from 'fp-ts/function'
+import { flow, pipe } from 'fp-ts/function'
 import { Eq } from 'fp-ts/number'
+import { not, Predicate } from 'fp-ts/Predicate'
 import { allPass, anyPass, equals, lensEq } from './fp'
 import {
   indLens,

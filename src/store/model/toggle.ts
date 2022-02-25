@@ -1,7 +1,7 @@
 import { Lens } from 'monocle-ts'
 import { Mutation, Toggles } from '../types'
 
-export const toggle: Mutation<Toggles, { lens: Lens<Toggles, boolean> }> = (
-  toggles,
-  { lens }
-) => lens.set(!lens.get(toggles))(toggles)
+type Payload = { lens: Lens<Toggles, boolean> }
+
+export const toggle: Mutation<Toggles, Payload> = (toggles, { lens }) =>
+  lens.set(!lens.get(toggles))(toggles)

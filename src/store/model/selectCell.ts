@@ -16,9 +16,5 @@ export const selectCell: SelectCell = (board, { ind, shouldClear }) =>
       )
     ),
     modifyAt(ind, selectedLens.set(true)),
-    optFold(constant(board), identity),
-    x => {
-      console.log(ind, shouldClear, x)
-      return x
-    }
+    optFold(constant(board), identity)
   )

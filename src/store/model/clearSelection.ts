@@ -1,5 +1,6 @@
 import { map } from 'fp-ts/Array'
-import { Endomorphism, flow } from 'fp-ts/function'
+import { flow } from 'fp-ts/function'
+import { Endomorphism } from 'fp-ts/Endomorphism'
 import { selectedLens, highlightedLens } from '../optics'
 import { Board } from '../types'
 

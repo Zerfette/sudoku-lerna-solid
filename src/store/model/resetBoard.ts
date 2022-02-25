@@ -1,5 +1,6 @@
 import { Eq as bEq } from 'fp-ts/boolean'
-import { Endomorphism, flow } from 'fp-ts/function'
+import { Endomorphism } from 'fp-ts/Endomorphism'
+import { flow } from 'fp-ts/function'
 import { lensEq, mapWhen } from '../../util/fns'
 import {
   valueLens,

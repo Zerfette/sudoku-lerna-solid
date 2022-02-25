@@ -1,20 +1,15 @@
 import { map, size } from 'fp-ts/Array'
 import { MonoidAll, MonoidAny } from 'fp-ts/boolean'
+import { Endomorphism } from 'fp-ts/Endomorphism'
 import { Eq } from 'fp-ts/Eq'
-import {
-  constFalse,
-  Endomorphism,
-  flow,
-  getMonoid,
-  identity,
-  Predicate
-} from 'fp-ts/function'
+import { constFalse, flow, getMonoid, identity } from 'fp-ts/function'
 import { Group } from 'fp-ts/Group'
 import { Magma } from 'fp-ts/Magma'
 import { concatAll, Monoid } from 'fp-ts/Monoid'
 import { Eq as nEq, Ord as nOrd } from 'fp-ts/number'
 import { fold } from 'fp-ts/Option'
 import { gt } from 'fp-ts/Ord'
+import { Predicate } from 'fp-ts/Predicate'
 import { Semigroup } from 'fp-ts/Semigroup'
 import { Monoid as sMonoid } from 'fp-ts/string'
 import { Lens, Optional } from 'monocle-ts'
