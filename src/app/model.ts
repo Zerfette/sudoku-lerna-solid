@@ -37,7 +37,6 @@ const isValue: Predicate<string> = x => elem(nEq)(+x)(range(0, 9))
 
 export const handleKeyDown = (): void => {
   const callback = (ev: KeyboardEvent): void => {
-    console.log('keydown')
     const { key, altKey, ctrlKey } = ev
     ev.stopPropagation()
     if (key !== 'F12') ev.preventDefault()

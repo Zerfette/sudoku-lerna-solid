@@ -5,18 +5,18 @@ import { style, getColors } from './style'
 import { onMouseDown, onMouseEnter } from './model'
 import { isNonZero } from '../../../../fns'
 
-const _: Component<{ cell: Cell }> = ({ cell: { ind } }) => {
-  const iSaySo = createMemo(() => isNonZero(state.board[ind].value))
+const _: Component<{ i: number }> = ({ i }) => {
+  const shouldDisplay = createMemo(() => isNonZero(state.board[i].value))
   const colors = getColors()
 
   return (
     <div
-      style={style(ind, colors)}
-      onMouseDown={onMouseDown(ind)}
-      onMouseEnter={onMouseEnter(ind)}
+      style={style(i, colors)}
+      onMouseDown={onMouseDown(i)}
+      onMouseEnter={onMouseEnter(i)}
     >
-      <Show when={iSaySo()}>
-        <p>{state.board[ind].value}</p>
+      <Show when={shouldDisplay()}>
+        <p>{state.board[i].value}</p>
       </Show>
     </div>
   )
