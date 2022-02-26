@@ -1,4 +1,10 @@
-import { colorModeValue, colors, space, fontWeights } from '../../../../theme'
+import {
+  colorModeValue,
+  colors,
+  fontSizes,
+  fontWeights,
+  space,
+} from '../../../../theme'
 import { state } from '../../../../store'
 import { Board, Cell } from '../../../../store/types'
 import { noConflicts } from '../../../../util/fns'
@@ -17,9 +23,9 @@ export const $cell = (ind: number): Record<string, string> => {
   const cell = state.board[ind]
   const { highlighted, locked, selected, value } = cell
   const valid = noConflicts(<Board>state.board, <Cell>cell, value)
-  console.log('calc style')
 
   return {
+    fontSize: fontSizes['4xl'],
     color: color(),
     width: size,
     height: size,
