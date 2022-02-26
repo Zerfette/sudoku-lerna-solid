@@ -47,6 +47,10 @@ type IfElse = <T>(
 export const ifElse: IfElse = (predicate, onTrue, onFalse) => data =>
   predicate(data) ? onTrue(data) : onFalse(data)
 
+// Determines if a number is non-zero
+export const isNonZero: Predicate<number> = x => !nEq.equals(x, 0)
+
+
 // Determines if the length of an array is equal to the given value
 type LengthIs = (x: number) => Predicate<Array<any>>
 export const lengthIs: LengthIs = x => flow(size, equals(nEq)(x))

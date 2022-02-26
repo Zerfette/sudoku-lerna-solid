@@ -20,12 +20,12 @@ const init: State = {
   board: puzzleToBoard(testPuzzle),
   numberSelected: 0,
   toggles: { autoSolve: false, mouseDown: false, mouseOutside: false },
+  get availables() {
+    return getAvailables(<Board>this.board)
+  },
   get selection() {
     return getSelectedOption(<Board>this.board)
   },
-  get availables() {
-    return getAvailables(<Board>this.board)
-  }
 }
 
 const [state, setState] = createStore(init)

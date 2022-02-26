@@ -36,7 +36,7 @@ export const style: Style = (
   const valid = noConflicts(<Board>state.board, <Cell>cell, value)
 
   return {
-    fontSize: fontSizes['4xl'],
+    'font-size': fontSizes['2xl'],
     color: color(),
     width: size,
     height: size,
