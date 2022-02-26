@@ -1,7 +1,9 @@
+import { createMemo } from 'solid-js'
 import { createStore } from 'solid-js/store'
 import { puzzleToBoard } from '../util/fns'
-import { State } from './types'
+import { Availables, Board, Selection, State } from './types'
 import dispatch from './dispatch'
+import { getAvailables, getSelectedOption } from './selectors'
 
 const testPuzzle = [
   [0, 3, 9, 0, 7, 0, 2, 5, 1],
@@ -18,7 +20,13 @@ const testPuzzle = [
 const init: State = {
   board: puzzleToBoard(testPuzzle),
   numberSelected: 0,
-  toggles: { autoSolve: false, mouseDown: false, mouseOutside: false }
+  toggles: { autoSolve: false, mouseDown: false, mouseOutside: false },
+  get selection() {
+    return getSelectedOption(<Board>this.board)
+  },
+  get availables() {
+    return getAvailables(<Board>this.board)
+  }
 }
 
 const [state, setState] = createStore(init)

@@ -1,17 +1,15 @@
-import { createMemo } from 'solid-js'
 import { elem, filter, map, uniq } from 'fp-ts/Array'
 import { pipe } from 'fp-ts/function'
 import { range } from 'fp-ts/NonEmptyArray'
 import { Eq as nEq } from 'fp-ts/number'
 import { fold } from 'fp-ts/Option'
 import { Lens } from 'monocle-ts'
-import { state } from '..'
 import { getSelectedOption } from './selection'
 import { valueLens, rowLens, colLens, regLens } from '../optics'
 import { Board, Cell } from '../types'
 import { isValidPlacement, lengthIs, lensEq } from '../../util/fns'
 
-const getAvailables = (board: Board) =>
+export const getAvailables = (board: Board) =>
   pipe(
     board,
     getSelectedOption,
@@ -49,5 +47,3 @@ const getAvailables = (board: Board) =>
       }
     )
   )
-
-export const availables = createMemo(() => getAvailables(<Board>state.board))

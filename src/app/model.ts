@@ -3,11 +3,10 @@ import { isSome } from 'fp-ts/Option'
 import { state, dispatch } from '../store'
 import { mouseDownLens } from '../store/optics'
 import { clearSelection, setToggle } from '../store/actions'
-import { selection } from '../store/selectors'
 
 export const handleClickAway = (): void => {
   const callback = () => {
-    if (state.toggles.mouseOutside && isSome(selection()))
+    if (state.toggles.mouseOutside && isSome(state.selection))
       dispatch(clearSelection)
   }
 
