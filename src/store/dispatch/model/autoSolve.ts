@@ -2,7 +2,7 @@ import { lookup, modifyAt } from 'fp-ts/Array'
 import { constant, identity, flow, pipe } from 'fp-ts/function'
 import { Eq as nEq } from 'fp-ts/number'
 import { fold as optFold } from 'fp-ts/Option'
-import { anyPass, lensEq, mapWhen } from '../../util/fns'
+import { anyPass, lensEq, mapWhen } from '../../../util/fns'
 import {
   valueLens,
   rowLens,
@@ -10,8 +10,8 @@ import {
   regLens,
   selectedLens,
   highlightedLens
-} from '../optics'
-import { Board, Mutation } from '../types'
+} from '../../optics'
+import { Board, Mutation } from '../../types'
 
 type AutoSolve = Mutation<Board, { ind: number; value: number }>
 export const autoSolve: AutoSolve = (board, { ind, value }) => {

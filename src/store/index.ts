@@ -18,7 +18,7 @@ const testPuzzle = [
 const init: State = {
   board: puzzleToBoard(testPuzzle),
   numberSelected: 0,
-  toggles: { autoSolve: false, mouseDown: false }
+  toggles: { autoSolve: false, mouseDown: false, mouseOutside: false }
 }
 
 const [state, setState] = createStore(init)

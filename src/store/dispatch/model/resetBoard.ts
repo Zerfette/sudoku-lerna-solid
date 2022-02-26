@@ -1,7 +1,7 @@
 import { Eq as bEq } from 'fp-ts/boolean'
 import { Endomorphism } from 'fp-ts/Endomorphism'
 import { flow } from 'fp-ts/function'
-import { lensEq, mapWhen } from '../../util/fns'
+import { lensEq, mapWhen } from '../../../util/fns'
 import {
   valueLens,
   selectedLens,
@@ -9,8 +9,8 @@ import {
   lockedLens,
   cornerLens,
   middleLens
-} from '../optics'
-import { Board } from '../types'
+} from '../../optics'
+import { Board } from '../../types'
 
 export const resetBoard: Endomorphism<Board> = mapWhen(
   lensEq(lockedLens, false)(bEq),

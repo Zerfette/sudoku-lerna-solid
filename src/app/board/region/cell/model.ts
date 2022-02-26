@@ -10,7 +10,7 @@ export const onMouseEnter = (ind: number) => (): void => {
 
 export const onMouseDown =
   (ind: number) =>
-  ({ ctrlKey }: { ctrlKey: boolean }): void => {
+  ({ ctrlKey }: globalThis.MouseEvent): void => {
     const { locked, value } = state.board[ind]
     locked
       ? pipe({ value }, numberSelect, dispatch)

@@ -28,15 +28,9 @@ type Style = (
   colors: Record<string, Accessor<string>>
 ) => Record<string, string>
 export const style: Style = (
-  ind: number,
-  {
-    invalidColor,
-    highlightedColor,
-    selectedColor,
-    dflt,
-    color
-  }: Record<string, Accessor<string>>
-): Record<string, string> => {
+  ind,
+  { invalidColor, highlightedColor, selectedColor, dflt, color }
+) => {
   const cell = state.board[ind]
   const { highlighted, locked, selected, value } = cell
   const valid = noConflicts(<Board>state.board, <Cell>cell, value)

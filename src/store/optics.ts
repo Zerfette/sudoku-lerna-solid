@@ -33,3 +33,6 @@ export const autoSolveLens: Lens<Toggles, boolean> = Lens.fromProp<Toggles>()(
 export const mouseDownLens: Lens<Toggles, boolean> = Lens.fromProp<Toggles>()(
   'mouseDown'
 )
+
+export const mouseOutsideLens: Lens<Toggles, boolean> =
+  Lens.fromProp<Toggles>()('mouseOutside')
