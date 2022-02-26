@@ -1,8 +1,6 @@
-import { colorModeValue, colors } from '../theme'
+import { Accessor } from 'solid-js'
 
-const background = colorModeValue(colors.gray[200], colors.gray[900])
-
-export const $root = (): Record<string, string> => ({
+export const $root = (background: Accessor<string>): Record<string, string> => ({
   'background-color': background(),
   'min-height': '100vh',
   display: 'flex',
