@@ -1,13 +1,12 @@
 import type { Component } from 'solid-js'
-import { toggleColorMode } from '../theme'
 import Board from './board'
+import Controls from './controls'
 import { $root } from './style'
 
 const App: Component = () => {
-
   return (
     <div style={$root()}>
-      <button onClick={toggleColorMode}>toggle color mode</button>
+      <Controls />
       <Board />
     </div>
   )
