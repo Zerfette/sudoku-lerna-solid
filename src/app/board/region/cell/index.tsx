@@ -1,22 +1,23 @@
-import { createMemo, Component, Show } from 'solid-js'
+import { createMemo, Component, Show, Accessor } from 'solid-js'
 import { state } from '../../../../store'
 import { Cell } from '../../../../store/types'
+import { isNonZero } from '../../../../fns'
 import { style, getColors } from './style'
 import { onMouseDown, onMouseEnter } from './model'
-import { isNonZero } from '../../../../fns'
 
 const _: Component<{ i: number }> = ({ i }) => {
-  const shouldDisplay = createMemo(() => isNonZero(state.board[i].value))
   const colors = getColors()
+  const cell = createMemo(() => state.board[i]) as Accessor<Cell>
+  const shouldDisplay = createMemo(() => isNonZero(cell().value))
 
   return (
     <div
-      style={style(i, colors)}
-      onMouseDown={onMouseDown(i)}
-      onMouseEnter={onMouseEnter(i)}
+      style={style(cell, colors)}
+      onMouseDown={onMouseDown(cell)}
+      onMouseEnter={onMouseEnter(cell)}
     >
       <Show when={shouldDisplay()}>
-        <p>{state.board[i].value}</p>
+        <p>{cell().value}</p>
       </Show>
     </div>
   )

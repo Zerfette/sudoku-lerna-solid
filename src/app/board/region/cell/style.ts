@@ -24,16 +24,15 @@ export const getColors = (): Record<string, Accessor<string>> => ({
 })
 
 type Style = (
-  ind: number,
+  cell: Accessor<Cell>,
   colors: Record<string, Accessor<string>>
 ) => Record<string, string>
 export const style: Style = (
-  ind,
+  cell,
   { invalidColor, highlightedColor, selectedColor, dflt, color }
 ) => {
-  const cell = state.board[ind]
-  const { highlighted, locked, selected, value } = cell
-  const valid = noConflicts(<Board>state.board, <Cell>cell, value)
+  const { highlighted, locked, selected, value }: Cell = cell()
+  const valid: boolean = noConflicts(<Board>state.board, cell(), value)
 
   return {
     'font-size': fontSizes['2xl'],
