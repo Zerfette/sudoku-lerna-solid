@@ -13,12 +13,10 @@ const colorModeValue = <T>(
   darkModeValue: T
 ): Accessor<T> => {
   const [value, setValue] = createSignal(darkModeValue)
-  createEffect(
-    () =>
-      isDarkMode()
-        ? setValue(() => darkModeValue)
-        : setValue(() => lightModeValue),
-    darkModeValue
+  createEffect(() =>
+    isDarkMode()
+      ? setValue(() => darkModeValue)
+      : setValue(() => lightModeValue)
   )
   return value
 }

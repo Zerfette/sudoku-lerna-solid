@@ -36,6 +36,7 @@ const dispatch = (action: Action): void => {
       setState('board', board => lockBoard(<Board>board))
       break
     case ActionType.NUMBER_SELECT:
+      setState('board', board => clearSelection(<Board>board))
       setState('numberSelected', action.payload.value)
       setState('board', board => numberSelect(<Board>board, action.payload))
       break

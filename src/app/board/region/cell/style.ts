@@ -35,7 +35,7 @@ export const style: Style = (
   const valid: boolean = noConflicts(<Board>state.board, cell(), value)
 
   return {
-    'font-size': fontSizes['2xl'],
+    'font-size': fontSizes['4xl'],
     color: color(),
     width: size,
     height: size,
@@ -52,6 +52,6 @@ export const style: Style = (
     'justify-content': 'center',
     'align-content': 'center',
     'border-radius': radii.sm,
-    'font-weight': locked ? fontWeights.black : fontWeights.normal
+    'font-weight': locked ? fontWeights.bold : fontWeights.normal
   }
 }

@@ -19,7 +19,7 @@ const testPuzzle = [
 const init: State = {
   board: puzzleToBoard(testPuzzle),
   numberSelected: 0,
-  toggles: { autoSolve: true, mouseDown: false, mouseOutside: false },
+  toggles: { autoSolve: false, mouseDown: false, mouseOutside: false },
   get availables() {
     return getAvailables(<Board>this.board)
   },
