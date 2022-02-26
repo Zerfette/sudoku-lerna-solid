@@ -1,8 +1,9 @@
-import { margin, regionSize } from './region/style'
+import { size as regionSize } from './region/style'
+import { margin } from './region/cell/style'
 
-const boardSize = 3 * regionSize + 6 * margin
+const size = `calc(3 * ${regionSize} + 6 * ${margin})`
 
 export const $board: Record<string, string> = {
-  width: `${boardSize}px`,
-  height: `${boardSize}px`
+  width: size,
+  height: size
 }

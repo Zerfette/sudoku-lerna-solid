@@ -1,11 +1,10 @@
-import{ cellSize } from './cell/style'
+import{ size as cellSize, margin } from './cell/style'
 
-export const margin = 5
-export const regionSize = 3 * cellSize + 6 * margin
+export const size = `calc(3 * ${cellSize} + 6 * ${margin})`
 
 export const $region: Record<string, string> = {
-  width: `${regionSize}px`,
-  height: `${regionSize}px`,
-  margin: `${margin}px`,
+  width: size,
+  height: size,
+  margin: margin,
   float: 'left'
 }

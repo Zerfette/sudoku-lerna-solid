@@ -1,12 +1,14 @@
-export const margin = 5
-export const cellSize = 50
+import { space } from '../../../../theme'
+
+export const margin = space[1]
+export const size = space[14]
 
 export const $cell: Record<string, string> = {
-  width: `${cellSize}px`,
-  height: `${cellSize}px`,
+  width: size,
+  height: size,
   background: 'grey',
   float: 'left',
-  margin: `${margin}px`,
+  margin: margin,
   display: 'grid',
   'justify-content': 'center',
   'align-content': 'center',
