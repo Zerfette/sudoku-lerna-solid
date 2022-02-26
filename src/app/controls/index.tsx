@@ -1,4 +1,4 @@
-import ColorModeButton from './colorModeButton'
+import ColorModeButton from './colorMode'
 
 const _ = () => <ColorModeButton />
 

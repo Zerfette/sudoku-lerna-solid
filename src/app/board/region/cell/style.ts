@@ -11,7 +11,7 @@ import {
 } from '../../../../theme'
 import { noConflicts } from '../../../../fns'
 
-export const margin = space[1]
+export const margin = space[0.5]
 export const size = space[14]
 const { black, cyan, purple, red, white } = colors
 
