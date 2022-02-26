@@ -1,4 +1,4 @@
-import { puzzleToBoard } from '../../util/fns'
+import { puzzleToBoard } from '../../fns'
 import { setState } from '..'
 import { Action, ActionType } from '../actions/types'
 import { Board, Toggles } from '../types'

@@ -2,7 +2,7 @@ import { lookup, modifyAt } from 'fp-ts/Array'
 import { constant, identity, flow, pipe } from 'fp-ts/function'
 import { Eq as nEq } from 'fp-ts/number'
 import { fold as optFold } from 'fp-ts/Option'
-import { anyPass, lensEq, mapWhen } from '../../../util/fns'
+import { anyPass, lensEq, mapWhen } from '../../../fns'
 import {
   valueLens,
   rowLens,

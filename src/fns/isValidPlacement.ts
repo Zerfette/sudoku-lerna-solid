@@ -9,8 +9,8 @@ import {
   colLens,
   regLens,
   valueLens
-} from '../../store/optics'
-import { Board, Cell } from '../../store/types'
+} from '../store/optics'
+import { Board, Cell } from '../store/types'
 
 type NoConflicts = (board: Board, cell: Cell, possibleValue: number) => boolean
 export const noConflicts: NoConflicts = (

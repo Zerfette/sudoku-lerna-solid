@@ -5,7 +5,7 @@ import { dispatch, state } from '../../store'
 import { setToggle } from '../../store/actions'
 import { mouseOutsideLens, regLens } from '../../store/optics'
 import { Board } from '../../store/types'
-import { lensEq } from '../../util/fns'
+import { lensEq } from '../../fns'
 
 const getRegion = (i: number) =>
   filter(lensEq(regLens, i)(nEq))(<Board>state.board)

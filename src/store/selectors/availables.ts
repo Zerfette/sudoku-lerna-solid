@@ -7,7 +7,7 @@ import { Lens } from 'monocle-ts'
 import { getSelectedOption } from './selection'
 import { valueLens, rowLens, colLens, regLens } from '../optics'
 import { Board, Cell } from '../types'
-import { isValidPlacement, lengthIs, lensEq } from '../../util/fns'
+import { isValidPlacement, lengthIs, lensEq } from '../../fns'
 
 export const getAvailables = (board: Board) =>
   pipe(

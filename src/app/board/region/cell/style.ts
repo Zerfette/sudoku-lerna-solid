@@ -9,7 +9,7 @@ import {
   radii,
   space
 } from '../../../../theme'
-import { noConflicts } from '../../../../util/fns'
+import { noConflicts } from '../../../../fns'
 
 export const margin = space[1]
 export const size = space[14]

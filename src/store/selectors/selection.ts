@@ -6,7 +6,7 @@ import { none, Option, some } from 'fp-ts/Option'
 
 import { selectedLens } from '../optics'
 import { Board, Cell } from '../types'
-import { lensEq } from '../../util/fns'
+import { lensEq } from '../../fns'
 
 type GetSelectedOption = (board: Board) => Option<Cell[]>
 export const getSelectedOption: GetSelectedOption = board =>

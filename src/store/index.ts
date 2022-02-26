@@ -1,7 +1,6 @@
-import { createMemo } from 'solid-js'
 import { createStore } from 'solid-js/store'
-import { puzzleToBoard } from '../util/fns'
-import { Availables, Board, Selection, State } from './types'
+import { puzzleToBoard } from '../fns'
+import { Board, State } from './types'
 import dispatch from './dispatch'
 import { getAvailables, getSelectedOption } from './selectors'
 

@@ -3,8 +3,8 @@ import { Endomorphism } from 'fp-ts/Endomorphism'
 import { flow } from 'fp-ts/function'
 import { Eq as nEq } from 'fp-ts/number'
 import { Predicate } from 'fp-ts/Predicate'
-import { indLens } from '../../store/optics'
-import { Board, Cell, Puzzle } from '../../store/types'
+import { indLens } from '../store/optics'
+import { Board, Cell, Puzzle } from '../store/types'
 
 const isNonZero: Predicate<number> = x => !nEq.equals(x, 0)
 
