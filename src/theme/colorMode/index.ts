@@ -4,11 +4,7 @@ import { ColorMode } from './types'
 const [colorMode, setColorMode] = createSignal(ColorMode.Dark)
 
 const toggleColorMode = (): ColorMode =>
-  setColorMode(cm => {
-    const value = cm === ColorMode.Dark ? ColorMode.Light : ColorMode.Dark
-    console.log(value)
-    return value
-  })
+  setColorMode(cm => (cm === ColorMode.Dark ? ColorMode.Light : ColorMode.Dark))
 
 const colorModeValue = (
   lightModeValue: string,

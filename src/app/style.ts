@@ -10,5 +10,5 @@ export const $root = (): Record<string, string> => ({
   'align-items': 'center',
   'justify-content': 'center',
   'font-size': 'calc(10px + 1vmin)',
-  color: 'white'
+  'user-select': 'none'
 })
