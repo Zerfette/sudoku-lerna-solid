@@ -1,14 +1,9 @@
-import { createSignal } from 'solid-js'
 import { colorModeValue, colors } from '../theme'
 
-const backgroundSignal = createSignal(colors.gray[900])
-colorModeValue(
-  { lightModeValue: colors.gray[200], darkModeValue: colors.gray[900] },
-  backgroundSignal
-)
+const background = colorModeValue(colors.gray[200], colors.gray[900])
 
 export const $root = (): Record<string, string> => ({
-  'background-color': backgroundSignal[0](),
+  'background-color': background(),
   'min-height': '100vh',
   display: 'flex',
   'flex-direction': 'column',

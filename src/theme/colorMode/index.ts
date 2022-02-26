@@ -1,4 +1,4 @@
-import { createSignal, createEffect, Signal } from 'solid-js'
+import { createSignal, createEffect, Accessor } from 'solid-js'
 import { ColorMode } from './types'
 
 const [colorMode, setColorMode] = createSignal(ColorMode.Dark)
@@ -11,15 +11,10 @@ const toggleColorMode = (): ColorMode =>
   })
 
 const colorModeValue = (
-  {
-    lightModeValue,
-    darkModeValue
-  }: {
-    lightModeValue: string
-    darkModeValue: string
-  },
-  [_, setValue]: Signal<string>
-): void => {
+  lightModeValue: string,
+  darkModeValue: string
+): Accessor<string> => {
+  const [value, setValue] = createSignal(darkModeValue)
   createEffect(
     () =>
       colorMode() === ColorMode.Dark
@@ -27,6 +22,7 @@ const colorModeValue = (
         : setValue(lightModeValue),
     darkModeValue
   )
+  return value
 }
 
 export { colorMode, toggleColorMode, colorModeValue }
