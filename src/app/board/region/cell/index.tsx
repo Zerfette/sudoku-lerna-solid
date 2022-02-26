@@ -4,7 +4,7 @@ import { $cell } from './style'
 
 const _: Component<{ cell: Cell }> = ({ cell }) => {
   return (
-    <div style={$cell}>
+    <div style={$cell(cell)}>
       <p>{cell.value}</p>
     </div>
   )
