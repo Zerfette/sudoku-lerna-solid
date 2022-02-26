@@ -2,7 +2,7 @@ import type { Component } from 'solid-js'
 import { colorModeValue, colors } from '../theme'
 import Board from './board'
 import Controls from './controls'
-import { handleClickAway } from './model'
+import { handleClickAway, onMouseDown, onMouseUp } from './model'
 import { style } from './style'
 
 const App: Component = () => {
@@ -10,7 +10,11 @@ const App: Component = () => {
   handleClickAway()
 
   return (
-    <div style={style(background)}>
+    <div
+      style={style(background)}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+    >
       <Controls />
       <Board />
     </div>

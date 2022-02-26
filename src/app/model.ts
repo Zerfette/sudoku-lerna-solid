@@ -1,7 +1,8 @@
 import { onCleanup, onMount } from 'solid-js'
 import { isSome } from 'fp-ts/Option'
 import { state, dispatch } from '../store'
-import { clearSelection } from '../store/actions'
+import { mouseDownLens } from '../store/optics'
+import { clearSelection, setToggle } from '../store/actions'
 import { selection } from '../store/selectors'
 
 export const handleClickAway = (): void => {
@@ -14,3 +15,9 @@ export const handleClickAway = (): void => {
 
   onCleanup(() => document.removeEventListener('mousedown', callback))
 }
+
+export const onMouseDown = (): void =>
+  dispatch(setToggle({ lens: mouseDownLens, value: true }))
+
+export const onMouseUp = (): void =>
+  dispatch(setToggle({ lens: mouseDownLens, value: false }))
