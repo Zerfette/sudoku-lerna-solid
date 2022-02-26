@@ -3,7 +3,7 @@ import { margin } from './region/cell/style'
 
 const size = `calc(3 * ${regionSize} + 6 * ${margin})`
 
-export const $board: Record<string, string> = {
+export const style: Record<string, string> = {
   width: size,
   height: size
 }

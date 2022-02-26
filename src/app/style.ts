@@ -1,6 +1,7 @@
 import { Accessor } from 'solid-js'
 
-export const $root = (background: Accessor<string>): Record<string, string> => ({
+type Style = (background: Accessor<string>) => Record<string, string>
+export const style: Style = background => ({
   'background-color': background(),
   'min-height': '100vh',
   display: 'flex',
