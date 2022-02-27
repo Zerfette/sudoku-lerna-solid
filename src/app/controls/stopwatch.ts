@@ -1,11 +1,4 @@
-import {
-  Accessor,
-  createEffect,
-  createMemo,
-  createSignal,
-  onCleanup,
-  Signal
-} from 'solid-js'
+import { Accessor, createMemo, createSignal, onCleanup, Signal } from 'solid-js'
 import { getMonoid as getArrayMonoid } from 'fp-ts/Array'
 import { constant, pipe } from 'fp-ts/function'
 import { IO } from 'fp-ts/IO'
@@ -26,12 +19,14 @@ const useTimer = () => {
   const [elapsedTime, setElapsedTime] = createSignal(0)
   let interval: number
 
-  createEffect(() => {
+  createMemo(() => {
     if (isRunning()) {
       interval = setInterval(
         () => setElapsedTime(prevElapsedTime => prevElapsedTime + 0.1),
         100
       )
+    } else {
+      clearInterval(interval)
     }
   })
 
@@ -61,13 +56,13 @@ export const getStopwatch: IO<Stopwatch> = () => {
   const [laps, setLaps]: Signal<Option<number[]>> = createSignal(none)
   const { isRunning, setIsRunning, elapsedTime, setElapsedTime } = useTimer()
 
-  const handleReset = () => {
+  const resetTimer = () => {
     setIsRunning(false)
     setElapsedTime(0)
     setLaps(() => none)
   }
 
-  const handleAddLap = () => {
+  const addLap = () => {
     const prevTotal = fold(constant(0), concatAll(MonoidSum))(laps())
     const currentLap = fold(
       constant(elapsedTime()),
@@ -81,8 +76,8 @@ export const getStopwatch: IO<Stopwatch> = () => {
   return {
     elapsedTime: createMemo(() => +elapsedTime().toFixed(1)),
     laps,
-    addLap: () => handleAddLap(),
-    resetTimer: () => handleReset(),
+    addLap,
+    resetTimer,
     startTimer: () => setIsRunning(true),
     stopTimer: () => setIsRunning(false),
     isRunning

@@ -19,7 +19,7 @@ export const getModel: GetModel = ({
   isRunning
 }) => {
 
-  onMount(() => startTimer())
+  // onMount(() => startTimer())
   const hours = createMemo(() =>
     pipe(
       elapsedTime(),
