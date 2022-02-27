@@ -3,15 +3,16 @@ import { FaSolidMoon, FaSolidSun } from 'solid-icons/fa'
 import {
   colorModeValue,
   colors,
-  isDarkMode,
-  isLightMode,
+  getPredicates,
   toggleColorMode
-} from '../../theme'
+} from '../../../theme'
 import { style } from './style'
 
 const _ = () => {
   const color = colorModeValue(colors.black, colors.white)
   const background = colorModeValue(colors.gray[300], colors.gray[700])
+  const { isDarkMode, isLightMode } = getPredicates()
+
   return (
     <div style={style(background, color)} onClick={toggleColorMode}>
       <Switch>

@@ -1,9 +1,9 @@
 import { Match, createSignal, Switch } from 'solid-js'
 import { FaSolidLock, FaSolidPlus } from 'solid-icons/fa'
-import { colorModeValue, colors } from '../../theme'
+import { colorModeValue, colors } from '../../../theme'
 import { style } from './style'
-import { dispatch } from '../../store'
-import { clearBoard, lockBoard } from '../../store/actions'
+import { dispatch } from '../../../store'
+import { clearBoard, lockBoard } from '../../../store/actions'
 
 const _ = () => {
   const [locked, setLocked] = createSignal(true)
@@ -18,10 +18,10 @@ const _ = () => {
     <div style={style(background, color)} onClick={onClick}>
       <Switch>
         <Match when={locked()}>
-          <FaSolidPlus size={22} />
+          <FaSolidPlus size={20} />
         </Match>
         <Match when={!locked()}>
-          <FaSolidLock size={22} />
+          <FaSolidLock size={20} />
         </Match>
       </Switch>
     </div>

@@ -1,5 +1,5 @@
 import { Accessor } from 'solid-js'
-import { radii, space } from '../../theme'
+import { radii, space } from '../../../theme'
 
 export const style = (background: Accessor<string>, color: Accessor<string>) => ({
   'background-color': background(),

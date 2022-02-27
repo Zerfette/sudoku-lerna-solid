@@ -1,5 +1,5 @@
 import { FaSolidQuestion } from 'solid-icons/fa'
-import { colorModeValue, colors } from '../../theme'
+import { colorModeValue, colors } from '../../../theme'
 import { style } from './style'
 
 const _ = () => {
@@ -8,7 +8,7 @@ const _ = () => {
   const onClick = () => {}
   return (
     <div style={style(background, color)} onClick={onClick}>
-      <FaSolidQuestion size={22} />
+      <FaSolidQuestion size={20} />
     </div>
   )
 }

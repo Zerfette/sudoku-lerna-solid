@@ -1,24 +1,40 @@
-import AutoSolve from './autoSolve'
-import ColorModeButton from './colorMode'
-import Edit from './edit'
-import Help from './help'
-import StartOver from './startOver'
 import { space } from '../../theme'
+import {
+  AutoSolve,
+  ColorModeButton,
+  Edit,
+  Help,
+  StartOver,
+  Timer
+} from './components'
+import { size } from '../board/style'
+import { getStopwatch } from './stopwatch'
 
-const style: Record<string, string> = {
-  margin: space[1],
+const root: Record<string, string> = {
   display: 'flex',
-  'justify-content': 'flex-end'
+  width: size,
+  'justify-content': 'space-between'
 }
 
-const _ = () => (
-  <div style={style}>
-    <StartOver />
-    <Edit />
-    <AutoSolve />
-    <ColorModeButton />
-    <Help />
-  </div>
-)
+const buttonRow: Record<string, string> = {
+  margin: space[1],
+  display: 'flex'
+}
+
+const _ = () => {
+  const stopwatch = getStopwatch()
+  return (
+    <div style={root}>
+      <Timer stopwatch={stopwatch} />
+      <div style={buttonRow}>
+        <StartOver />
+        <Edit />
+        <AutoSolve />
+        <ColorModeButton />
+        <Help />
+      </div>
+    </div>
+  )
+}
 
 export default _

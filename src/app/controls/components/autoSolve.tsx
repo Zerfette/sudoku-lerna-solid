@@ -1,10 +1,10 @@
 import { Match, Switch } from 'solid-js'
 import { BiSolidMagicWand } from 'solid-icons/bi'
-import { colorModeValue, colors } from '../../theme'
+import { colorModeValue, colors } from '../../../theme'
 import { style } from './style'
-import { dispatch, state } from '../../store'
-import { toggle } from '../../store/actions'
-import { autoSolveLens } from '../../store/optics'
+import { dispatch, state } from '../../../store'
+import { toggle } from '../../../store/actions'
+import { autoSolveLens } from '../../../store/optics'
 
 const _ = () => {
   const offBackground = colorModeValue(colors.gray[300], colors.gray[700])
