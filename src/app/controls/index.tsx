@@ -1,4 +1,4 @@
-import { space } from '../../theme'
+import { space } from 'theme'
 import {
   AutoSolve,
   ColorModeButton,

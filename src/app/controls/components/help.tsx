@@ -1,5 +1,6 @@
 import { FaSolidQuestion } from 'solid-icons/fa'
-import { colorModeValue, colors } from '../../../theme'
+import { colors } from 'theme'
+import { colorModeValue } from '../../../colorMode'
 import { style } from './style'
 
 const _ = () => {

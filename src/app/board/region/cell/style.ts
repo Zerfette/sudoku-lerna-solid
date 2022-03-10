@@ -1,15 +1,9 @@
-import { Accessor } from 'solid-js'
+import { Accessor, JSX } from 'solid-js'
 import { noConflicts } from 'core'
 import { Board, Cell } from 'core/types'
+import { colors, fontSizes, radii, space } from 'theme'
+import { colorModeValue } from '../../../../colorMode'
 import { state } from '../../../../store'
-import {
-  colorModeValue,
-  colors,
-  fontSizes,
-  fontWeights,
-  radii,
-  space
-} from '../../../../theme'
 
 export const margin = space[0.5]
 export const size = space[14]
@@ -26,7 +20,7 @@ export const getColors = (): Record<string, Accessor<string>> => ({
 type Style = (
   cell: Accessor<Cell>,
   colors: Record<string, Accessor<string>>
-) => Record<string, string>
+) => JSX.CSSProperties
 export const style: Style = (
   cell,
   { invalidColor, highlightedColor, selectedColor, dflt, color }
@@ -52,6 +46,6 @@ export const style: Style = (
     'justify-content': 'center',
     'align-content': 'center',
     'border-radius': radii.sm,
-    'font-weight': locked ? fontWeights.bold : fontWeights.normal
+    'font-weight': locked ? "bold" : "normal"
   }
 }

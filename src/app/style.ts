@@ -1,6 +1,6 @@
-import { Accessor } from 'solid-js'
+import { Accessor, JSX } from 'solid-js'
 
-type Style = (background: Accessor<string>) => Record<string, string>
+type Style = (background: Accessor<string>) => JSX.CSSProperties
 export const style: Style = background => ({
   'background-color': background(),
   'min-height': '100vh',

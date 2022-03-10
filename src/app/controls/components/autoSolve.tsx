@@ -2,8 +2,9 @@ import { Match, Switch } from 'solid-js'
 import { BiSolidMagicWand } from 'solid-icons/bi'
 import { toggle } from 'core/actions'
 import { autoSolveLens } from 'core/optics'
+import { colors } from 'theme'
+import { colorModeValue  } from '../../../colorMode'
 import { dispatch, state } from '../../../store'
-import { colorModeValue, colors } from '../../../theme'
 import { style } from './style'
 
 const _ = () => {

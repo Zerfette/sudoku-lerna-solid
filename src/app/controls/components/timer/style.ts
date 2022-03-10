@@ -1,10 +1,10 @@
-import { Accessor, createMemo } from 'solid-js'
-import { fontSizes, lineHeights, radii, space } from '../../../../theme'
+import { Accessor, createMemo, JSX } from 'solid-js'
+import { fontSizes, lineHeights, radii, space } from 'theme'
 
 type GetStyle = (
   color: Accessor<string>,
   background: Accessor<string>
-) => Record<string, Accessor<Record<string, string>>>
+) => Record<string, Accessor<JSX.CSSProperties>>
 
 export const getStyle: GetStyle = (color, background) =>
   ({

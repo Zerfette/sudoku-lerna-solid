@@ -1,11 +1,11 @@
 import { Match, Switch } from 'solid-js'
 import { FaSolidMoon, FaSolidSun } from 'solid-icons/fa'
+import { colors } from 'theme'
 import {
   colorModeValue,
-  colors,
-  getPredicates,
+  getPredicates, 
   toggleColorMode
-} from '../../../theme'
+} from '../../../colorMode'
 import { style } from './style'
 
 const _ = () => {

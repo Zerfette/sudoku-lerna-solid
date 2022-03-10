@@ -1,10 +1,11 @@
-import { Accessor } from 'solid-js'
-import { radii, space } from '../../../theme'
+import { Accessor, JSX } from 'solid-js'
+import { radii, space } from 'theme'
 
-export const style = (
+type style = (
   background: Accessor<string>,
   color: Accessor<string>
-) => ({
+) => JSX.CSSProperties
+export const style: style = (background, color) => ({
   'background-color': background(),
   height: space[10],
   width: space[10],

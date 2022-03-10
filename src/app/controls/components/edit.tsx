@@ -1,8 +1,9 @@
 import { Match, createSignal, Switch } from 'solid-js'
 import { FaSolidLock, FaSolidPlus } from 'solid-icons/fa'
 import { clearBoard, lockBoard } from 'core/actions'
+import { colors } from 'theme'
 import { dispatch } from '../../../store'
-import { colorModeValue, colors } from '../../../theme'
+import { colorModeValue } from '../../../colorMode'
 import { style } from './style'
 
 const _ = () => {

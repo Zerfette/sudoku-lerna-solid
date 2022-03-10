@@ -1,7 +1,8 @@
 import { FaSolidSyncAlt } from 'solid-icons/fa'
 import { resetBoard } from 'core/actions'
+import { colors } from 'theme'
+import { colorModeValue } from '../../../colorMode'
 import { dispatch } from '../../../store'
-import { colorModeValue, colors } from '../../../theme'
 import { style } from './style'
 
 const _ = () => {

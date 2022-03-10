@@ -1,5 +1,6 @@
 import type { Component } from 'solid-js'
-import { colorModeValue, colors } from '../theme'
+import { colors } from 'theme'
+import { colorModeValue } from '../colorMode'
 import { useAutoSolve } from './autoSolve'
 import Board from './board'
 import Controls from './controls'
