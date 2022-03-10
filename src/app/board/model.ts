@@ -1,4 +1,4 @@
-import { dispatch } from '../../store'
+import { dispatch } from '~/store'
 import { setToggle } from 'core/actions'
 import { mouseOutsideLens } from 'core/optics'
 

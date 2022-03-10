@@ -14,7 +14,7 @@ import { Eq as nEq } from 'fp-ts/number'
 import { isSome } from 'fp-ts/Option'
 import { Predicate } from 'fp-ts/Predicate'
 import { range } from 'fp-ts/NonEmptyArray'
-import { state, dispatch } from '../store'
+import { state, dispatch } from '~/store'
 
 export const onMouseDown = (): void =>
   pipe({ lens: mouseDownLens, value: true }, setToggle, dispatch)

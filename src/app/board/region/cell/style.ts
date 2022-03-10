@@ -2,8 +2,8 @@ import { Accessor, JSX } from 'solid-js'
 import { noConflicts } from 'core'
 import { Board, Cell } from 'core/types'
 import { colors, fontSizes, radii, space } from 'theme'
-import { colorModeValue } from '../../../../colorMode'
-import { state } from '../../../../store'
+import { colorModeValue } from '~/colorMode'
+import { state } from '~/store'
 
 export const margin = space[0.5]
 export const size = space[14]

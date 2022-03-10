@@ -2,7 +2,7 @@ import { Accessor } from 'solid-js'
 import { numberSelect, selectCell } from 'core/actions'
 import { Cell } from 'core/types'
 import { pipe } from 'fp-ts/function'
-import { state, dispatch } from '../../../../store'
+import { state, dispatch } from '~/store'
 
 export const onMouseEnter = (cell: Accessor<Cell>) => (): void => {
   const { ind, locked } = cell()

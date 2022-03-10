@@ -5,7 +5,7 @@ import {
   colorModeValue,
   getPredicates, 
   toggleColorMode
-} from '../../../colorMode'
+} from '~/colorMode'
 import { style } from './style'
 
 const _ = () => {

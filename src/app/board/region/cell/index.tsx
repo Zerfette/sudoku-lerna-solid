@@ -1,7 +1,7 @@
 import { createMemo, Component, Show, Accessor } from 'solid-js'
 import { Cell } from 'core/types'
 import { isNonZero } from 'fns'
-import { state } from '../../../../store'
+import { state } from '~/store'
 import { style, getColors } from './style'
 import { onMouseDown, onMouseEnter } from './model'
 

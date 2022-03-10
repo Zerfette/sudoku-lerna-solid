@@ -1,7 +1,7 @@
 import { Component, Match, Switch } from 'solid-js'
 import { FaSolidPlay, FaSolidPause, FaSolidUndoAlt } from 'solid-icons/fa'
 import { colors } from 'theme'
-import { colorModeValue } from '../../../../colorMode'
+import { colorModeValue } from '~/colorMode'
 import { Stopwatch } from '../../stopwatch'
 import { getModel } from './model'
 import { getStyle } from './style'

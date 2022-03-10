@@ -15,7 +15,7 @@ import { Eq as nEq } from 'fp-ts/number'
 import { fold, getOrElse } from 'fp-ts/Option'
 import { Predicate } from 'fp-ts/Predicate'
 import { Lens } from 'monocle-ts'
-import { dispatch, state } from '../store'
+import { dispatch, state } from '~/store'
 
 export const useAutoSolve = (): void => {
   type DispatchAutoSolve = (cell: Cell) => void
