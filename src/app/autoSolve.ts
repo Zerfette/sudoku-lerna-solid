@@ -1,4 +1,8 @@
 import { createEffect } from 'solid-js'
+import { autoSolve } from 'core/actions'
+import { rowLens, colLens, regLens } from 'core/optics'
+import { Board, Cell, Selection } from 'core/types'
+import { lengthIs, lensEq } from 'fns'
 import { filter, head, map } from 'fp-ts/Array'
 import {
   constant,
@@ -12,10 +16,6 @@ import { fold, getOrElse } from 'fp-ts/Option'
 import { Predicate } from 'fp-ts/Predicate'
 import { Lens } from 'monocle-ts'
 import { dispatch, state } from '../store'
-import { rowLens, colLens, regLens } from '../store/optics'
-import { autoSolve } from '../store/actions'
-import { Board, Cell, Selection } from '../store/types'
-import { lengthIs, lensEq } from '../fns'
 
 export const useAutoSolve = (): void => {
   type DispatchAutoSolve = (cell: Cell) => void

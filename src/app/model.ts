@@ -1,12 +1,4 @@
 import { onCleanup, onMount } from 'solid-js'
-import { elem } from 'fp-ts/Array'
-import { pipe } from 'fp-ts/function'
-import { Eq as nEq } from 'fp-ts/number'
-import { isSome } from 'fp-ts/Option'
-import { Predicate } from 'fp-ts/Predicate'
-import { range } from 'fp-ts/NonEmptyArray'
-import { state, dispatch } from '../store'
-import { cornerLens, middleLens, mouseDownLens } from '../store/optics'
 import {
   clearSelection,
   numberSelect,
@@ -14,7 +6,15 @@ import {
   setToggle,
   updateBig,
   updateSmall
-} from '../store/actions'
+} from 'core/actions'
+import { cornerLens, middleLens, mouseDownLens } from 'core/optics'
+import { elem } from 'fp-ts/Array'
+import { pipe } from 'fp-ts/function'
+import { Eq as nEq } from 'fp-ts/number'
+import { isSome } from 'fp-ts/Option'
+import { Predicate } from 'fp-ts/Predicate'
+import { range } from 'fp-ts/NonEmptyArray'
+import { state, dispatch } from '../store'
 
 export const onMouseDown = (): void =>
   pipe({ lens: mouseDownLens, value: true }, setToggle, dispatch)

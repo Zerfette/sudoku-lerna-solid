@@ -1,9 +1,9 @@
 import { Accessor, createMemo, onMount } from 'solid-js'
+import { concat, magmaModulo, zeroPad } from 'fns'
 import { intersperse, map } from 'fp-ts/Array'
 import { pipe } from 'fp-ts/function'
 import { IO } from 'fp-ts/IO'
 import { MonoidProduct } from 'fp-ts/number'
-import { concat, magmaModulo, zeroPad } from '../../../../fns'
 import { Stopwatch } from '../../stopwatch'
 
 type GetModel = (stopwatch: Stopwatch) => {

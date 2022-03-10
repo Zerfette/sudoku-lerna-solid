@@ -1,6 +1,6 @@
 import { dispatch } from '../../store'
-import { setToggle } from '../../store/actions'
-import { mouseOutsideLens } from '../../store/optics'
+import { setToggle } from 'core/actions'
+import { mouseOutsideLens } from 'core/optics'
 
 export const onMouseOver = () =>
   dispatch(setToggle({ lens: mouseOutsideLens, value: false }))

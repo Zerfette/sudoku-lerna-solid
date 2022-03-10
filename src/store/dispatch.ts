@@ -1,13 +1,13 @@
-import { puzzleToBoard } from '../../fns'
-import { setState } from '..'
-import { Action, ActionType } from '../actions/types'
-import { Board, Toggles } from '../types'
+import { setState } from './'
+import { Action, ActionType } from 'core/actions/types'
+import { Board, Toggles } from 'core/types'
 import {
   autoSolve,
   clearSelection,
   clearBoard,
   lockBoard,
   numberSelect,
+  puzzleToBoard,
   resetBoard,
   selectAll,
   selectCell,
@@ -15,7 +15,7 @@ import {
   toggle,
   updateBig,
   updateSmall
-} from './model'
+} from 'core'
 
 const dispatch = (action: Action): void => {
   switch (action.type) {
