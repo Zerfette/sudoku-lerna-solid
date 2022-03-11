@@ -11,7 +11,7 @@ import { cornerLens, middleLens, mouseDownLens } from 'core/optics'
 import { elem } from 'fp-ts/Array'
 import { pipe } from 'fp-ts/function'
 import { Eq as nEq } from 'fp-ts/number'
-import { isSome } from 'fp-ts/Option'
+import { fold, isSome } from 'fp-ts/Option'
 import { Predicate } from 'fp-ts/Predicate'
 import { range } from 'fp-ts/NonEmptyArray'
 import { state, dispatch } from '~/store'
@@ -42,13 +42,13 @@ export const handleKeyDown = (): void => {
     if (key !== 'F12') ev.preventDefault()
     if (isValue(key)) {
       const value = +key
-      if (isSome(state.selection)) {
+      const onNone = () => pipe({ value }, numberSelect, dispatch)
+      const onSome = () => {
         if (!altKey && !ctrlKey) pipe({ value }, updateBig, dispatch)
         if (ctrlKey) pipe({ lens: cornerLens, value }, updateSmall, dispatch)
         if (altKey) pipe({ lens: middleLens, value }, updateSmall, dispatch)
-      } else {
-        pipe({ value }, numberSelect, dispatch)
       }
+      fold(onNone, onSome)(state.selection)
     } else {
       if (key === 'Enter') pipe(clearSelection, dispatch)
       if (key === 'Delete' || key === 'Backspace')

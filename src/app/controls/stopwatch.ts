@@ -17,7 +17,7 @@ const arrayOptionMonoid = pipe(getArrayMonoid<number>(), getOptionMonoid)
 const useTimer = () => {
   const [isRunning, setIsRunning] = createSignal(false)
   const [elapsedTime, setElapsedTime] = createSignal(0)
-  let interval: number
+  let interval: NodeJS.Timer
 
   createMemo(() => {
     if (isRunning()) {
@@ -49,6 +49,7 @@ export type Stopwatch = {
   resetTimer: IO<void>
   startTimer: IO<void>
   stopTimer: IO<void>
+  toggleTimer: IO<void>
   isRunning: Accessor<boolean>
 }
 
@@ -73,13 +74,19 @@ export const getStopwatch: IO<Stopwatch> = () => {
       setLaps(() => arrayOptionMonoid.concat(laps(), some([currentLap])))
   }
 
+  const startTimer =  () => setIsRunning(true)
+  const stopTimer = () => setIsRunning(false)
+  const toggleTimer = () => (isRunning() ? stopTimer() : startTimer())
+  
+
   return {
     elapsedTime: createMemo(() => +elapsedTime().toFixed(1)),
     laps,
     addLap,
     resetTimer,
-    startTimer: () => setIsRunning(true),
-    stopTimer: () => setIsRunning(false),
+    startTimer,
+    stopTimer,
+    toggleTimer,
     isRunning
   }
 }

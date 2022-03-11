@@ -1,13 +1,12 @@
 import { Accessor, createMemo, JSX } from 'solid-js'
-import { fontSizes, lineHeights, radii, space } from 'theme'
+import { colors, fontSizes, lineHeights, radii, space } from 'theme'
+import { colorModeValue } from '~/colorMode'
 
-type GetStyle = (
-  color: Accessor<string>,
-  background: Accessor<string>
-) => Record<string, Accessor<JSX.CSSProperties>>
-
-export const getStyle: GetStyle = (color, background) =>
-  ({
+type GetStyle = () => Record<string, Accessor<JSX.CSSProperties>>
+export const getStyle: GetStyle = () => {
+  const background = colorModeValue(colors.gray[300], colors.gray[700])
+  const color = colorModeValue(colors.black, colors.white)
+  return {
     root: createMemo(() => ({ display: 'flex', 'align-items': 'center' })),
     paragraph: createMemo(() => ({
       'line-height': lineHeights.none,
@@ -29,4 +28,5 @@ export const getStyle: GetStyle = (color, background) =>
       'justify-content': 'center',
       'align-items': 'center'
     }))
-  })
+  }
+}
