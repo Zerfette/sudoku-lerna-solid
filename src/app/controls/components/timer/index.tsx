@@ -14,15 +14,15 @@ const _: Component<{ stopwatch: Stopwatch }> = ({
       <div style={button()} onClick={toggleTimer}>
         <Switch>
           <Match when={isRunning()}>
-            <FaSolidPause size={10} />
+            <FaSolidPause size={12} />
           </Match>
           <Match when={!isRunning()}>
-            <FaSolidPlay size={10} />
+            <FaSolidPlay size={12} />
           </Match>
         </Switch>
       </div>
       <div style={button()} onClick={resetTimer}>
-        <FaSolidUndoAlt size={10} />
+        <FaSolidUndoAlt size={12} />
       </div>
     </div>
   )

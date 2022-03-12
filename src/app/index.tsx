@@ -2,6 +2,7 @@ import type { Component } from 'solid-js'
 import { colors } from 'theme'
 import { colorModeValue } from '~/colorMode'
 import { useAutoSolve } from './autoSolve'
+import Availables from './availables'
 import Board from './board'
 import Controls from './controls'
 import { handleKeyDown, onMouseDown, onMouseUp } from './model'
@@ -20,6 +21,7 @@ const App: Component = () => {
     >
       <Controls />
       <Board />
+      <Availables />
     </div>
   )
 }
