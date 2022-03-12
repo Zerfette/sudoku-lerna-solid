@@ -1,6 +1,6 @@
 import { Component, Match, Switch } from 'solid-js'
 import { FaSolidPlay, FaSolidPause, FaSolidUndoAlt } from 'solid-icons/fa'
-import { getTimerText } from 'core'
+import { getTimerText } from 'core/stopwatch'
 import { Stopwatch } from '../../stopwatch'
 import { getStyle } from './style'
 

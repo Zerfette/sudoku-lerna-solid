@@ -16,22 +16,15 @@ import { Predicate } from 'fp-ts/Predicate'
 import { range } from 'fp-ts/NonEmptyArray'
 import { state, dispatch } from '~/store'
 
-export const onMouseDown = (): void =>
+export const onMouseDown = (): void => {
   pipe({ lens: mouseDownLens, value: true }, setToggle, dispatch)
+  if (state.toggles.mouseOutside && isSome(state.selection))
+    dispatch(clearSelection)
+}
 
 export const onMouseUp = (): void =>
   pipe({ lens: mouseDownLens, value: false }, setToggle, dispatch)
 
-export const handleClickAway = (): void => {
-  const callback = () => {
-    if (state.toggles.mouseOutside && isSome(state.selection))
-      dispatch(clearSelection)
-  }
-
-  onMount(() => document.addEventListener('mousedown', callback))
-
-  onCleanup(() => document.removeEventListener('mousedown', callback))
-}
 
 const isValue: Predicate<string> = x => elem(nEq)(+x)(range(0, 9))
 
@@ -58,6 +51,5 @@ export const handleKeyDown = (): void => {
   }
 
   onMount(() => document.addEventListener('keydown', callback))
-
   onCleanup(() => document.removeEventListener('keydown', callback))
 }
