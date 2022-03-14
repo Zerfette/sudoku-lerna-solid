@@ -8,11 +8,11 @@ export const useStyle = () => {
   const offBackground = colorModeValue(colors.gray[100], colors.gray[600])
   const offColor = colorModeValue(colors.gray[300], colors.gray[700])
   const mixins = {
-    width: space['8'],
-    height: space['8'],
+    width: space[8],
+    height: space[8],
     'border-radius': radii.sm,
-    'margin-right': space['2'],
-    'font-size': fontSizes['xl'],
+    'margin-right': space[2],
+    'font-size': fontSizes.xl,
     'line-height': 1,
     display: 'flex',
     'align-items': 'center',

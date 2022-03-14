@@ -11,7 +11,7 @@ const _ = () => {
   const background = colorModeValue(colors.gray[300], colors.gray[700])
   return (
     <div style={style(background, color)} onClick={onClick}>
-      <FaSolidSyncAlt size={20} />
+      <FaSolidSyncAlt size={18} />
     </div>
   )
 }

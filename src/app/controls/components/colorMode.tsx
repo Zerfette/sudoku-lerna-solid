@@ -17,10 +17,10 @@ const _ = () => {
     <div style={style(background, color)} onClick={toggleColorMode}>
       <Switch>
         <Match when={isLightMode()}>
-          <FaSolidMoon size={20} />
+          <FaSolidMoon size={18} />
         </Match>
         <Match when={isDarkMode()}>
-          <FaSolidSun size={20} />
+          <FaSolidSun size={18} />
         </Match>
       </Switch>
     </div>

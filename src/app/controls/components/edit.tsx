@@ -19,10 +19,10 @@ const _ = () => {
     <div style={style(background, color)} onClick={onClick}>
       <Switch>
         <Match when={locked()}>
-          <FaSolidPlus size={20} />
+          <FaSolidPlus size={18} />
         </Match>
         <Match when={!locked()}>
-          <FaSolidLock size={20} />
+          <FaSolidLock size={18} />
         </Match>
       </Switch>
     </div>

@@ -1,9 +1,15 @@
+import { Accessor } from 'solid-js'
 import { useStyle } from './style'
 
-const _ = ({ i, availables }: { i: number; availables: number[] }) => {
+type Props = {
+  i: number
+  availables: Accessor<number[]>
+}
+
+const _ = ({ i, availables }: Props) => {
   const style = useStyle()
   return (
-    <div style={availables.includes(i) ? style().on : style().off}>{i}</div>
+    <div style={availables().includes(i) ? style().on : style().off}>{i}</div>
   )
 }
 

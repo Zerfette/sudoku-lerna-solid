@@ -17,12 +17,12 @@ const _ = () => {
     <Switch>
       <Match when={state.toggles.autoSolve}>
         <div style={style(onBackground, onColor)} onClick={onClick}>
-          <BiSolidMagicWand size={22} />
+          <BiSolidMagicWand size={24} />
         </div>
       </Match>
       <Match when={!state.toggles.autoSolve}>
         <div style={style(offBackground, offColor)} onClick={onClick}>
-          <BiSolidMagicWand size={22} />
+          <BiSolidMagicWand size={24} />
         </div>
       </Match>
     </Switch>

@@ -9,7 +9,7 @@ const _ = () => {
   const onClick = () => {}
   return (
     <div style={style(background, color)} onClick={onClick}>
-      <FaSolidQuestion size={20} />
+      <FaSolidQuestion size={18} />
     </div>
   )
 }
