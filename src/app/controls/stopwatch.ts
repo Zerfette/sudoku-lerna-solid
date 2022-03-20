@@ -37,7 +37,7 @@ export type Stopwatch = {
   isRunning: Accessor<boolean>
 }
 
-export const getStopwatch: IO<Stopwatch> = () => {
+export const useStopwatch: IO<Stopwatch> = () => {
   const [laps, setLaps]: Signal<Laps> = createSignal(none)
   const { isRunning, setIsRunning, elapsedTime, setElapsedTime } = useTimer()
 
