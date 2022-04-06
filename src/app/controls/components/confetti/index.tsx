@@ -6,12 +6,7 @@ const _ = ({ when }: { when: Accessor<boolean> }) => {
   let p5: P5
 
   const root = (
-    <div
-      onClick={() => {
-        console.log(p5)
-      }}
-      style={{ position: 'absolute', left: 0, top: 0 }}
-    />
+    <div style={{ position: 'absolute', left: 0, top: 0 }} />
   ) as HTMLElement
 
   createMemo(() => {

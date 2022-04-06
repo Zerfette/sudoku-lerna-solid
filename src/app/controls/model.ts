@@ -28,7 +28,6 @@ export const useModel: UseModel = () => {
       map(valueLens.get),
       every(not(equals(nEq)(0)))
     )
-    console.log('done', done)
     if (done) {
       pipe(
         <Board>state.board,
@@ -40,7 +39,6 @@ export const useModel: UseModel = () => {
             stopwatch.isRunning() && stopwatch.stopTimer()
           },
           () => {
-            console.log('setSolvedTrue')
             setSolved(true)
             stopwatch.isRunning() && stopwatch.stopTimer()
           }
